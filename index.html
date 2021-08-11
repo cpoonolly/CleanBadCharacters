@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script>
+      function onSubmit(e) {
+        e.preventDefault();
+
+        textToCleanEl = document.getElementById("text-to-clean");
+        cleanedTextEl = document.getElementById("cleaned-text");
+
+        cleanedTextEl.value = textToCleanEl.value.replaceAll(/[\u202F\u00A0]/g, " ");
+
+        return false;
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit="return onSubmit(event)">
+      <textarea id="text-to-clean" cols="30" rows="10"></textarea><br/><br/>
+      <input type="submit"><br/><br/>
+      <textarea id="cleaned-text" cols="30" rows="10"></textarea>
+    </form>
+  </body>
+</html>
